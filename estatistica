@@ -1,0 +1,53 @@
+function variancia(x)
+
+  n = length(x)
+  media = mean(x)
+  soma = 0
+  x1=0
+
+    for i = 1:n
+      x1 = (x[i]-media)^2
+      soma = soma + x1
+      x1 = 0
+    end
+
+  v = soma/n
+  return v
+
+end
+
+function mediaPonderada(x,p)
+
+  if length(x) == length(p)
+    n = length(p)
+    j = 1
+
+    soma = 0
+    somaPesos = 0
+
+    for j = 1:n
+      soma = soma + (x[j] * p[j])
+      somaPesos = somaPesos + p[j]
+    end
+    media = soma/somaPesos
+    return media
+  else
+    print("vetores tem que ter o mesmo tamanho")
+  end
+
+end
+
+function desvioPadrao(x)
+  n = length(x)
+  media = mean(x)
+  soma = 0
+
+  for i = 1:n
+    soma = soma + ((x[i] - media ) ^ 2)
+  end
+
+  v = soma /n
+  dp = sqrt(v)
+
+  return v
+end
